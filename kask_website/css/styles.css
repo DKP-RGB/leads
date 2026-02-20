@@ -15,6 +15,13 @@
     --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+body.light-mode {
+    --color-black: #ffffff;
+    --color-dark-grey: #f4f4f5;
+    --color-medium-grey: #e4e4e7;
+    --color-white: #18181b;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -840,11 +847,140 @@ img {
 }
 
 .footer-bottom {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.4);
     font-size: 0.8rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.btn-theme-toggle {
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+    font-size: 1.2rem;
+}
+
+.btn-theme-toggle:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
+}
+
+/* Specific Light Mode Overrides */
+body.light-mode .hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../assets/images/hero_background_industrial.png') center/cover no-repeat;
+    background-color: #f4f4f5;
+}
+
+body.light-mode .hero p {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .nav-link {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode .nav-link:hover {
+    color: var(--color-gold);
+}
+
+body.light-mode .industry-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+body.light-mode .industry-item:hover .industry-overlay {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+body.light-mode .industry-overlay h3 {
+    color: var(--color-white);
+}
+
+body.light-mode .about-content h2 {
+    color: var(--color-black);
+}
+
+body.light-mode .about-content p {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+body.light-mode .logo img {
+    mix-blend-mode: multiply;
+}
+
+body.light-mode .unified-section {
+    background: linear-gradient(to bottom, var(--color-dark-grey), var(--color-black));
+}
+
+body.light-mode .u-testimonial-card {
+    background: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .card-variant-dark {
+    background: var(--color-medium-grey);
+}
+
+body.light-mode .brands-section {
+    background: #e4e4e7;
+}
+
+body.light-mode .brand-logo {
+    background: transparent;
+    mix-blend-mode: multiply;
+}
+
+body.light-mode .brand-separator {
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.2), transparent);
+}
+
+body.light-mode .brands-header h2 {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode .unified-content p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode .reasons-list li {
+    font-weight: 600;
+}
+
+body.light-mode .footer-contact p,
+body.light-mode .footer-bottom {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+body.light-mode .social-icon {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .card-link-text {
+    color: var(--color-black);
+}
+
+body.light-mode .modern-service-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Responsiveness */

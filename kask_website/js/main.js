@@ -156,3 +156,41 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoRotate();
     }
 });
+
+// Theme Toggle Logic (Executed immediately since script is at the bottom of the body)
+(function initThemeToggle() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('.theme-icon') : null;
+
+    if (!themeToggleBtn) {
+        console.error("Theme toggle button not found in DOM!");
+        return;
+    }
+
+    // Check local storage for preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (themeIcon) {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+        if (themeIcon) {
+            if (isLight) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+    });
+})();
