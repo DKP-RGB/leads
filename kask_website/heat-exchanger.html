@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heat Exchanger | KASK Engineering</title>
+    <title>Heat Exchangers | KASK Engineering</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product-page.css">
+    <style>
+        .product-hero {
+            background-image: linear-gradient(135deg,rgba(0,0,0,.76),rgba(10,10,10,.86)),
+                              url('assets/heat_exchanger.png');
+        }
+    </style>
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo1.png" alt="KASK Engineering">
-            </a>
+            <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
+                <a href="products.html" class="nav-link active">Products</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -29,51 +32,126 @@
         </div>
     </nav>
 
-    <section class="hero" style="height: 60vh;">
-        <div class="hero-content">
-            <h1>Heat Exchanger</h1>
-            <p>Premium industrial solutions for your business.</p>
+    <section class="product-hero">
+        <div class="hero-content" style="opacity:1;transform:none;">
+            <h1>Heat <span class="text-gold">Exchangers</span></h1>
+            <p>High-efficiency heat transfer equipment for industrial processes, HVAC, power, and petrochemical sectors.</p>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2 class="text-gold">Overview</h2>
-            <p>We provide top-tier Heat Exchanger designed for efficiency and durability. Our engineering team ensures
-                that every unit meets global standards.</p>
+    <main>
+        <section style="padding:4rem 0;background:var(--color-dark-grey);">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a><span>/</span>
+                    <a href="products.html">Products</a><span>/</span>
+                    <span style="color:rgba(255,255,255,.7)">Heat Exchangers</span>
+                </nav>
 
-            <div class="reasons-grid" style="margin-top: 4rem;">
-                <div class="reason-box">
-                    <i class="fa-solid fa-check reason-icon"></i>
-                    <h4>High Performance</h4>
+                <div class="product-detail">
+                    <div class="product-img-wrap">
+                        <img src="assets/heat_exchanger.png" alt="Heat Exchanger">
+                    </div>
+                    <div class="product-info">
+                        <div class="gold-divider"></div>
+                        <h2>Heat Exchangers</h2>
+                        <p class="intro">Heat Exchangers are devices used to transfer heat from one fluid to another without mixing them. They play a vital role in maintaining process temperature and improving energy efficiency in various industrial systems.</p>
+                        <div class="features-grid">
+                            <div class="feature-item"><i class="fa-solid fa-fire-flame-curved"></i><span>High Thermal Efficiency</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><span>Durable & Reliable Design</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-gauge-high"></i><span>High Temp & Pressure Rated</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-compress"></i><span>Compact & Space-Saving</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Low Maintenance Requirement</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-recycle"></i><span>Energy Recovery Capability</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-shield reason-icon"></i>
-                    <h4>Durable</h4>
+
+                <!-- Types -->
+                <h3 style="font-size:1.8rem;color:var(--color-gold);margin-bottom:1.5rem;">
+                    <i class="fa-solid fa-layer-group" style="margin-right:.75rem;"></i>Types of Heat Exchangers
+                </h3>
+                <div class="types-grid">
+                    <div class="type-card"><i class="fa-solid fa-pipe-section"></i><h4>Shell & Tube</h4><p>High-pressure & high-temperature applications in heavy industry.</p></div>
+                    <div class="type-card"><i class="fa-solid fa-table-cells"></i><h4>Plate Heat Exchanger</h4><p>Compact design with high efficiency for HVAC & food industries.</p></div>
+                    <div class="type-card"><i class="fa-solid fa-fan"></i><h4>Air Cooled</h4><p>Uses air to cool fluids — ideal where cooling water is unavailable.</p></div>
+                    <div class="type-card"><i class="fa-solid fa-arrows-left-right"></i><h4>Double Pipe</h4><p>Simple, cost-effective design for small-scale heat transfer.</p></div>
+                    <div class="type-card"><i class="fa-solid fa-border-all"></i><h4>Finned Tube</h4><p>Extended surface for air heating and cooling applications.</p></div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-cog reason-icon"></i>
-                    <h4>Customizable</h4>
+
+                <div class="apps-section">
+                    <h3><i class="fa-solid fa-industry" style="margin-right:.75rem;"></i>Applications</h3>
+                    <div class="apps-grid">
+                        <div class="app-tag"><i class="fa-solid fa-bolt-lightning"></i> Power Plants</div>
+                        <div class="app-tag"><i class="fa-solid fa-flask"></i> Chemical & Pharma</div>
+                        <div class="app-tag"><i class="fa-solid fa-fan"></i> HVAC Systems</div>
+                        <div class="app-tag"><i class="fa-solid fa-oil-well"></i> Oil & Gas Industry</div>
+                        <div class="app-tag"><i class="fa-solid fa-utensils"></i> Food & Beverage</div>
+                        <div class="app-tag"><i class="fa-solid fa-snowflake"></i> Refrigeration & Cooling</div>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-leaf reason-icon"></i>
-                    <h4>Eco-Friendly</h4>
+
+                <div class="advantages-section">
+                    <h3 class="text-gold">Advantages</h3>
+                    <ul class="advantages-list">
+                        <li><i class="fa-solid fa-check"></i> High thermal efficiency</li>
+                        <li><i class="fa-solid fa-check"></i> Robust & long-lasting build</li>
+                        <li><i class="fa-solid fa-check"></i> Custom engineering solutions available</li>
+                        <li><i class="fa-solid fa-check"></i> Suitable for extreme conditions</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="services-highlight">
+            <div class="container">
+                <div class="sh-header">
+                    <span class="badge">What We Offer</span>
+                    <h2>Our <span>Services</span></h2>
+                    <p>Complete heat exchanger solutions from supply and custom engineering to ongoing support.</p>
+                </div>
+                <div class="services-cards">
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-store"></i></div><h4>Supply & Installation</h4><p>Quality heat exchangers sourced and installed to specification.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-pencil-ruler"></i></div><h4>Custom Engineering</h4><p>Bespoke heat exchanger design and engineering for unique process requirements.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-wrench"></i></div><h4>Maintenance & Repair</h4><p>Cleaning, retubing, repairing and full reconditioning services.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h4>Spare Parts Supply</h4><p>Gaskets, tubes, plates, and other critical spare parts in stock.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-headset"></i></div><h4>Technical Support</h4><p>Thermal calculations, performance audits, and upgrade studies.</p></div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 
     <footer id="contact" class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 KASK Engineering. All rights reserved.</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
+                    <div class="footer-tagline">Quality Meets Excellence</div>
+                    <p>Innovative industrial solutions for the modern world.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Silicon City, Indore, MP, India</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@kaskengineering.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
+            <div class="footer-bottom"><p>&copy; 2026 KASK Engineering. All rights reserved.</p></div>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>

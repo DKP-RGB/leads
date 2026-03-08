@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gas Booster | KASK Engineering</title>
+    <title>Gas Boosters | KASK Engineering</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product-page.css">
+    <style>
+        .product-hero { background-image: linear-gradient(135deg,rgba(0,0,0,.78),rgba(10,10,10,.88)), url('assets/gas_booster.png'); }
+    </style>
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo1.png" alt="KASK Engineering">
-            </a>
+            <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
+                <a href="products.html" class="nav-link active">Products</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -29,45 +29,110 @@
         </div>
     </nav>
 
-    <section class="hero" style="height: 60vh;">
-        <div class="hero-content">
-            <h1>Gas Booster</h1>
-            <p>Premium industrial solutions for your business.</p>
+    <section class="product-hero">
+        <div class="hero-content" style="opacity:1;transform:none;">
+            <h1>Gas <span class="text-gold">Boosters</span></h1>
+            <p>Specialized high-pressure gas boosting solutions for industrial, laboratory, and process applications.</p>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2 class="text-gold">Overview</h2>
-            <p>We provide top-tier Gas Booster designed for efficiency and durability. Our engineering team ensures that
-                every unit meets global standards.</p>
+    <main>
+        <section style="padding:4rem 0;background:var(--color-dark-grey);">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a><span>/</span>
+                    <a href="products.html">Products</a><span>/</span>
+                    <span style="color:rgba(255,255,255,.7)">Gas Boosters</span>
+                </nav>
 
-            <div class="reasons-grid" style="margin-top: 4rem;">
-                <div class="reason-box">
-                    <i class="fa-solid fa-check reason-icon"></i>
-                    <h4>High Performance</h4>
+                <div class="product-detail">
+                    <div class="product-img-wrap">
+                        <img src="assets/gas_booster.png" alt="Gas Booster">
+                    </div>
+                    <div class="product-info">
+                        <div class="gold-divider"></div>
+                        <h2>Gas Boosters</h2>
+                        <p class="intro">Gas Boosters are specialized compressors designed to increase the pressure of gases such as nitrogen, oxygen, air, hydrogen, and other industrial gases. They are widely used in industries where high-pressure gas supply is required for testing, filling, and process applications.</p>
+                        <div class="features-grid">
+                            <div class="feature-item"><i class="fa-solid fa-gauge-high"></i><span>High Pressure Boosting Capability</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><span>Reliable & Safe Operation</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-compress"></i><span>Compact & Robust Design</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-screwdriver-wrench"></i><span>Low Maintenance Requirement</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-wind"></i><span>Suitable for Various Industrial Gases</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-infinity"></i><span>Long Service Life & Durability</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-shield reason-icon"></i>
-                    <h4>Durable</h4>
+
+                <div class="apps-section">
+                    <h3><i class="fa-solid fa-industry" style="margin-right:.75rem;"></i>Applications</h3>
+                    <div class="apps-grid">
+                        <div class="app-tag"><i class="fa-solid fa-tank-water"></i> Cylinder Filling Stations</div>
+                        <div class="app-tag"><i class="fa-solid fa-gauge"></i> Pressure Testing</div>
+                        <div class="app-tag"><i class="fa-solid fa-oil-well"></i> Oil & Gas Industry</div>
+                        <div class="app-tag"><i class="fa-solid fa-flask"></i> Chemical & Pharma Plants</div>
+                        <div class="app-tag"><i class="fa-solid fa-magnifying-glass"></i> Leak Testing Systems</div>
+                        <div class="app-tag"><i class="fa-solid fa-microscope"></i> Laboratory & Research</div>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-cog reason-icon"></i>
-                    <h4>Customizable</h4>
-                </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-leaf reason-icon"></i>
-                    <h4>Eco-Friendly</h4>
+
+                <div class="advantages-section">
+                    <h3 class="text-gold">Advantages</h3>
+                    <ul class="advantages-list">
+                        <li><i class="fa-solid fa-check"></i> Increases gas pressure efficiently</li>
+                        <li><i class="fa-solid fa-check"></i> Energy-efficient operation</li>
+                        <li><i class="fa-solid fa-check"></i> Safe handling of industrial gases</li>
+                        <li><i class="fa-solid fa-check"></i> Long service life and durability</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="services-highlight">
+            <div class="container">
+                <div class="sh-header">
+                    <span class="badge">What We Offer</span>
+                    <h2>Our <span>Services</span></h2>
+                    <p>Comprehensive gas booster lifecycle support from supply to technical consultation.</p>
+                </div>
+                <div class="services-cards">
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-store"></i></div><h4>Supply & Installation</h4><p>Gas booster supply, installation and system integration services.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-diagram-project"></i></div><h4>System Design & Integration</h4><p>Custom gas boosting system design tailored to your process needs.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-wrench"></i></div><h4>Maintenance & Repair</h4><p>Preventive maintenance, troubleshooting, and complete repair services.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h4>Spare Parts Support</h4><p>Ready stock of critical spare parts for minimal downtime.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-headset"></i></div><h4>Technical Consultation</h4><p>Expert guidance on gas selection, pressure requirements, and system sizing.</p></div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 
     <footer id="contact" class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 KASK Engineering. All rights reserved.</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
+                    <div class="footer-tagline">Quality Meets Excellence</div>
+                    <p>Innovative industrial solutions for the modern world.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Silicon City, Indore, MP, India</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@kaskengineering.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
+            <div class="footer-bottom"><p>&copy; 2026 KASK Engineering. All rights reserved.</p></div>
         </div>
     </footer>
 
@@ -75,5 +140,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>

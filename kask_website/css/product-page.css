@@ -1,0 +1,178 @@
+/* ── Product Page Shared Styles ── */
+
+.product-hero {
+    height: 60vh; min-height: 400px;
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 80px;
+    position: relative;
+}
+.product-hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+.product-hero p { font-size: 1.2rem; color: rgba(255,255,255,0.75); max-width: 700px; margin: 0 auto; }
+
+.breadcrumb {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem; flex-wrap: wrap;
+}
+.breadcrumb a { color: var(--color-gold); }
+.breadcrumb span { color: rgba(255,255,255,0.3); }
+
+.product-detail {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center; padding: 4rem 0;
+}
+@media (max-width: 900px) { .product-detail { grid-template-columns: 1fr; gap: 2rem; } }
+
+.product-img-wrap {
+    position: relative; border-radius: 1.5rem;
+    overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.product-img-wrap img {
+    width: 100%; height: 420px; object-fit: cover;
+    display: block; transition: transform 0.6s ease;
+}
+.product-img-wrap:hover img { transform: scale(1.04); }
+.product-img-wrap::after {
+    content: ''; position: absolute; inset: 0;
+    border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 1.5rem; pointer-events: none;
+}
+
+.product-info h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.product-info .intro {
+    font-size: 1.05rem; color: rgba(255,255,255,0.65);
+    line-height: 1.8; margin-bottom: 2rem;
+}
+.gold-divider { width: 60px; height: 3px; background: var(--color-gold); margin-bottom: 2rem; border-radius: 2px; }
+
+.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+.feature-item {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    background: rgba(255,255,255,0.04); border-radius: 0.75rem;
+    padding: 0.9rem 1rem; border: 1px solid rgba(255,255,255,0.06);
+}
+.feature-item i { color: var(--color-gold); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+.feature-item span { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.4; }
+
+.apps-section {
+    background: var(--color-medium-grey); border-radius: 1.5rem;
+    padding: 2.5rem; margin: 2rem 0 4rem;
+}
+.apps-section h3 { font-size: 1.8rem; color: var(--color-gold); margin-bottom: 1.5rem; }
+.apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; }
+.app-tag {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 0.5rem; padding: 0.6rem 1rem;
+    font-size: 0.85rem; color: rgba(255,255,255,0.8);
+}
+.app-tag i { color: var(--color-gold); font-size: 0.85rem; }
+
+.advantages-section { padding: 2rem 0 4rem; }
+.advantages-section h3 { font-size: 2rem; margin-bottom: 2rem; }
+.advantages-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 600px) { .advantages-list { grid-template-columns: 1fr; } }
+.advantages-list li {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.95rem; color: rgba(255,255,255,0.8);
+    padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.03); border-radius: 0.5rem;
+    border-left: 3px solid var(--color-gold);
+}
+.advantages-list li i { color: var(--color-gold); }
+
+/* Types Grid (for Heat Exchanger) */
+.types-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1.2rem; margin: 2rem 0 4rem; }
+.type-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 1rem; padding: 1.5rem; transition: all 0.3s ease;
+}
+.type-card:hover { border-color: var(--color-gold); background: rgba(212,160,23,0.05); transform: translateY(-4px); }
+.type-card i { font-size: 2rem; color: var(--color-gold); margin-bottom: 1rem; display: block; }
+.type-card h4 { font-size: 0.95rem; color: var(--color-white); margin-bottom: 0.5rem; }
+.type-card p { font-size: 0.8rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* ── Services Highlight (Gold theme – default) ── */
+.services-highlight {
+    background: linear-gradient(135deg,#1a1200 0%,#0a0a0a 40%,#1a1200 100%);
+    border-top: 1px solid rgba(212,160,23,0.3);
+    border-bottom: 1px solid rgba(212,160,23,0.3);
+    padding: 5rem 0; position: relative; overflow: hidden;
+}
+.services-highlight::before {
+    content: ''; position: absolute; top: -50%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle,rgba(212,160,23,0.08) 0%,transparent 70%);
+    pointer-events: none;
+}
+.sh-header { text-align: center; margin-bottom: 3rem; }
+.sh-header .badge {
+    display: inline-block; background: var(--color-gold); color: #000;
+    font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem;
+    border-radius: 2rem; margin-bottom: 1rem;
+}
+.sh-header h2 { font-size: 2.8rem; color: var(--color-white); margin-bottom: 0.5rem; }
+.sh-header h2 span { color: var(--color-gold); }
+.sh-header p { color: rgba(255,255,255,0.55); max-width: 600px; margin: 0 auto; }
+
+.services-cards {
+    display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.5rem; position: relative; z-index: 1;
+}
+.svc-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(212,160,23,0.2);
+    border-radius: 1rem; padding: 2rem 1.5rem; text-align: center;
+    transition: all 0.35s ease; position: relative; overflow: hidden;
+}
+.svc-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg,rgba(212,160,23,0.08) 0%,transparent 60%);
+    opacity: 0; transition: opacity 0.35s ease;
+}
+.svc-card:hover { transform: translateY(-6px); border-color: var(--color-gold); box-shadow: 0 20px 40px rgba(212,160,23,0.15); }
+.svc-card:hover::before { opacity: 1; }
+.svc-icon {
+    width: 64px; height: 64px; background: rgba(212,160,23,0.1);
+    border: 1px solid rgba(212,160,23,0.3); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.2rem; font-size: 1.5rem; color: var(--color-gold);
+    transition: all 0.35s ease;
+}
+.svc-card:hover .svc-icon { background: var(--color-gold); color: #000; transform: scale(1.1); }
+.svc-card h4 { font-size: 1rem; color: var(--color-white); margin-bottom: 0.5rem; }
+.svc-card p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+.cta-strip {
+    background: var(--color-gold); color: #000; padding: 3rem 2rem;
+    text-align: center; border-radius: 1.5rem; margin: 0 0 4rem;
+}
+.cta-strip h3 { font-size: 2rem; margin-bottom: 0.5rem; color: #000; }
+.cta-strip p { margin-bottom: 1.5rem; opacity: 0.75; }
+.cta-strip a {
+    display: inline-block; background: #000; color: var(--color-gold);
+    padding: 0.9rem 2.5rem; border-radius: 0.5rem;
+    font-family: var(--font-heading); text-transform: uppercase;
+    letter-spacing: 1px; font-size: 0.95rem; transition: all 0.3s ease;
+}
+.cta-strip a:hover { background: #1a1a1a; transform: translateY(-2px); }
+
+/* Tab styles (air-compressors only) */
+.product-tabs { display: flex; gap: 0; border-bottom: 2px solid rgba(255,255,255,0.08); margin-bottom: 3rem; }
+.tab-btn {
+    padding: 1rem 2rem; background: none; border: none; cursor: pointer;
+    font-family: var(--font-heading); font-size: 1rem; text-transform: uppercase;
+    letter-spacing: 1px; color: rgba(255,255,255,0.5); border-bottom: 3px solid transparent;
+    margin-bottom: -2px; transition: all 0.3s ease;
+}
+.tab-btn.active { color: var(--color-gold); border-bottom-color: var(--color-gold); }
+.tab-btn:hover { color: var(--color-white); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+@media (max-width: 768px) {
+    .product-hero h1 { font-size: 2.5rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .product-tabs { flex-wrap: wrap; }
+}

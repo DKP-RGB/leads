@@ -5,15 +5,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Compressors | KASK Engineering</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* ── Product Page Specific Styles ── */
+        .product-hero {
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(10,10,10,0.85) 100%),
+                        url('assets/screw_compressor.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .product-hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+        .product-hero p { font-size: 1.2rem; color: rgba(255,255,255,0.75); max-width: 700px; }
+
+        .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;
+                      color: rgba(255,255,255,0.5); margin-bottom: 2rem; flex-wrap: wrap; }
+        .breadcrumb a { color: var(--color-gold); }
+        .breadcrumb span { color: rgba(255,255,255,0.3); }
+
+        /* Product Tab Section */
+        .product-tabs { display: flex; gap: 0; border-bottom: 2px solid rgba(255,255,255,0.08); margin-bottom: 3rem; }
+        .tab-btn {
+            padding: 1rem 2rem; background: none; border: none; cursor: pointer;
+            font-family: var(--font-heading); font-size: 1rem; text-transform: uppercase;
+            letter-spacing: 1px; color: rgba(255,255,255,0.5); border-bottom: 3px solid transparent;
+            margin-bottom: -2px; transition: all 0.3s ease;
+        }
+        .tab-btn.active { color: var(--color-gold); border-bottom-color: var(--color-gold); }
+        .tab-btn:hover { color: var(--color-white); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* Product Detail Layout */
+        .product-detail {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+            padding: 4rem 0;
+        }
+        @media (max-width: 900px) { .product-detail { grid-template-columns: 1fr; gap: 2rem; } }
+        .product-img-wrap {
+            position: relative; border-radius: 1.5rem; overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+        .product-img-wrap img { width: 100%; height: 420px; object-fit: cover; display: block;
+            transition: transform 0.6s ease; }
+        .product-img-wrap:hover img { transform: scale(1.04); }
+        .product-img-wrap::after {
+            content: ''; position: absolute; inset: 0;
+            border: 1px solid rgba(212,160,23,0.2); border-radius: 1.5rem; pointer-events: none;
+        }
+
+        .product-info h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-white); }
+        .product-info .intro { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 2rem; }
+        .gold-divider { width: 60px; height: 3px; background: var(--color-gold); margin-bottom: 2rem; border-radius: 2px; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+        .feature-item {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            background: rgba(255,255,255,0.04); border-radius: 0.75rem; padding: 0.9rem 1rem;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .feature-item i { color: var(--color-gold); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+        .feature-item span { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.4; }
+
+        /* Applications List */
+        .apps-section { background: var(--color-medium-grey); border-radius: 1.5rem; padding: 2.5rem; margin: 4rem 0; }
+        .apps-section h3 { font-size: 1.8rem; color: var(--color-gold); margin-bottom: 1.5rem; }
+        .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+        .app-tag {
+            display: flex; align-items: center; gap: 0.6rem;
+            background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);
+            border-radius: 0.5rem; padding: 0.6rem 1rem; font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+        .app-tag i { color: var(--color-gold); font-size: 0.85rem; }
+
+        /* ── Highlighted Services Section ── */
+        .services-highlight {
+            background: linear-gradient(135deg, #1a1200 0%, #0a0a0a 40%, #1a1200 100%);
+            border-top: 1px solid rgba(212,160,23,0.3);
+            border-bottom: 1px solid rgba(212,160,23,0.3);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .services-highlight::before {
+            content: '';
+            position: absolute; top: -50%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .services-highlight::after {
+            content: '';
+            position: absolute; bottom: -50%; right: -10%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .sh-header { text-align: center; margin-bottom: 3rem; }
+        .sh-header .badge {
+            display: inline-block; background: var(--color-gold); color: #000;
+            font-family: var(--font-heading); font-size: 0.75rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1.2rem;
+            border-radius: 2rem; margin-bottom: 1rem;
+        }
+        .sh-header h2 { font-size: 2.8rem; color: var(--color-white); margin-bottom: 0.5rem; }
+        .sh-header p { color: rgba(255,255,255,0.55); max-width: 600px; margin: 0 auto; }
+        .services-cards {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;
+            position: relative; z-index: 1;
+        }
+        .svc-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(212,160,23,0.2);
+            border-radius: 1rem; padding: 2rem 1.5rem;
+            text-align: center; transition: all 0.35s ease;
+            position: relative; overflow: hidden;
+        }
+        .svc-card::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(212,160,23,0.08) 0%, transparent 60%);
+            opacity: 0; transition: opacity 0.35s ease;
+        }
+        .svc-card:hover { transform: translateY(-6px); border-color: var(--color-gold);
+                          box-shadow: 0 20px 40px rgba(212,160,23,0.15); }
+        .svc-card:hover::before { opacity: 1; }
+        .svc-icon {
+            width: 64px; height: 64px; background: rgba(212,160,23,0.1);
+            border: 1px solid rgba(212,160,23,0.3); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.2rem; font-size: 1.5rem; color: var(--color-gold);
+            transition: all 0.35s ease;
+        }
+        .svc-card:hover .svc-icon { background: var(--color-gold); color: #000; transform: scale(1.1); }
+        .svc-card h4 { font-size: 1rem; color: var(--color-white); margin-bottom: 0.5rem; }
+        .svc-card p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+        /* Advantages */
+        .advantages-section { padding: 4rem 0; }
+        .advantages-section h3 { font-size: 2rem; margin-bottom: 2rem; }
+        .advantages-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 600px) { .advantages-list { grid-template-columns: 1fr; } }
+        .advantages-list li {
+            display: flex; align-items: center; gap: 0.75rem;
+            font-size: 0.95rem; color: rgba(255,255,255,0.8);
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.03); border-radius: 0.5rem;
+            border-left: 3px solid var(--color-gold);
+        }
+        .advantages-list li i { color: var(--color-gold); }
+
+        /* CTA Strip */
+        .cta-strip {
+            background: var(--color-gold); color: #000; padding: 3rem 2rem;
+            text-align: center; border-radius: 1.5rem; margin: 0 0 4rem;
+        }
+        .cta-strip h3 { font-size: 2rem; margin-bottom: 0.5rem; color: #000; }
+        .cta-strip p { margin-bottom: 1.5rem; opacity: 0.75; }
+        .cta-strip a {
+            display: inline-block; background: #000; color: var(--color-gold);
+            padding: 0.9rem 2.5rem; border-radius: 0.5rem;
+            font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.95rem; transition: all 0.3s ease;
+        }
+        .cta-strip a:hover { background: #1a1a1a; transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .product-hero h1 { font-size: 2.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .product-tabs { flex-wrap: wrap; }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -21,7 +197,7 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
+                <a href="products.html" class="nav-link active">Products</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -29,44 +205,234 @@
         </div>
     </nav>
 
-    <section class="hero" style="height: 60vh;">
-        <div class="hero-content">
-            <h1>Air Compressors</h1>
-            <p>Premium industrial solutions for your business.</p>
+    <!-- Hero -->
+    <section class="product-hero">
+        <div class="hero-content" style="opacity:1; transform:none;">
+            <h1>Air <span class="text-gold">Compressors</span></h1>
+            <p>Efficient, reliable and energy-saving compressed air solutions for every industry.</p>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2 class="text-gold">Overview</h2>
-            <p>We provide top-tier Air Compressors designed for efficiency and durability. Our engineering team ensures
-                that every unit meets global standards.</p>
+    <!-- Main Content -->
+    <main style="padding-top: 0;">
+        <section style="padding: 4rem 0; background: var(--color-dark-grey);">
+            <div class="container">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="products.html">Products</a>
+                    <span>/</span>
+                    <span style="color:rgba(255,255,255,0.7)">Air Compressors</span>
+                </nav>
 
-            <div class="reasons-grid" style="margin-top: 4rem;">
-                <div class="reason-box">
-                    <i class="fa-solid fa-check reason-icon"></i>
-                    <h4>High Performance</h4>
+                <!-- Product Tabs -->
+                <div class="product-tabs">
+                    <button class="tab-btn active" onclick="switchTab(this, 'screw')">
+                        <i class="fa-solid fa-rotate" style="margin-right:0.5rem;"></i> Screw Compressors
+                    </button>
+                    <button class="tab-btn" onclick="switchTab(this, 'recip')">
+                        <i class="fa-solid fa-arrows-up-down" style="margin-right:0.5rem;"></i> Reciprocating Compressors
+                    </button>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-shield reason-icon"></i>
-                    <h4>Durable</h4>
+
+                <!-- ── Tab 1: Screw Compressor ── -->
+                <div class="tab-panel active" id="tab-screw">
+                    <div class="product-detail">
+                        <div class="product-img-wrap">
+                            <img src="assets/screw_compressor.png" alt="Screw Compressor">
+                        </div>
+                        <div class="product-info">
+                            <div class="gold-divider"></div>
+                            <h2>Screw Compressors</h2>
+                            <p class="intro">Screw Compressors are highly efficient air compressors widely used in industries for continuous and reliable compressed air supply. They use two rotating helical screws (rotors) to compress air, ensuring smooth operation, low vibration, and high energy efficiency.</p>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-bolt"></i>
+                                    <span>High Efficiency & Energy Saving</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>24/7 Continuous Duty Operation</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-volume-xmark"></i>
+                                    <span>Low Noise & Vibration</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    <span>Low Maintenance Requirement</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-compress"></i>
+                                    <span>Compact & Space-Saving Design</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    <span>Stable Air Pressure Output</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applications -->
+                    <div class="apps-section">
+                        <h3><i class="fa-solid fa-industry" style="margin-right:0.75rem;"></i>Applications</h3>
+                        <div class="apps-grid">
+                            <div class="app-tag"><i class="fa-solid fa-cog"></i> Manufacturing Industries</div>
+                            <div class="app-tag"><i class="fa-solid fa-car"></i> Automobile Workshops</div>
+                            <div class="app-tag"><i class="fa-solid fa-flask"></i> Pharmaceutical Plants</div>
+                            <div class="app-tag"><i class="fa-solid fa-utensils"></i> Food & Beverage Processing</div>
+                            <div class="app-tag"><i class="fa-solid fa-shirt"></i> Textile & Packaging</div>
+                            <div class="app-tag"><i class="fa-solid fa-hard-hat"></i> Construction & Engineering</div>
+                        </div>
+                    </div>
+
+                    <!-- Advantages -->
+                    <div class="advantages-section">
+                        <h3 class="text-gold">Advantages</h3>
+                        <ul class="advantages-list">
+                            <li><i class="fa-solid fa-check"></i> Stable air pressure output</li>
+                            <li><i class="fa-solid fa-check"></i> Longer service life</li>
+                            <li><i class="fa-solid fa-check"></i> Lower operating cost</li>
+                            <li><i class="fa-solid fa-check"></i> Better performance vs. piston compressors</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-cog reason-icon"></i>
-                    <h4>Customizable</h4>
-                </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-leaf reason-icon"></i>
-                    <h4>Eco-Friendly</h4>
+
+                <!-- ── Tab 2: Reciprocating Compressor ── -->
+                <div class="tab-panel" id="tab-recip">
+                    <div class="product-detail">
+                        <div class="product-img-wrap">
+                            <img src="assets/reciprocating_compressor.png" alt="Reciprocating Compressor">
+                        </div>
+                        <div class="product-info">
+                            <div class="gold-divider"></div>
+                            <h2>Reciprocating Compressors</h2>
+                            <p class="intro">Reciprocating (Piston) Compressors are heavy-duty, proven technology compressors that use pistons driven by a crankshaft to deliver high-pressure compressed air. Ideal for intermittent use and high-pressure applications across diverse industries.</p>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-gauge-high"></i>
+                                    <span>High-Pressure Capability</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <span>Robust & Heavy-Duty Build</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-sliders"></i>
+                                    <span>Wide Range of Capacities</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-tools"></i>
+                                    <span>Easy Field Maintenance</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-temperature-low"></i>
+                                    <span>Air / Water Cooled Options</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                                    <span>Cost-Effective Solution</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applications -->
+                    <div class="apps-section">
+                        <h3><i class="fa-solid fa-industry" style="margin-right:0.75rem;"></i>Applications</h3>
+                        <div class="apps-grid">
+                            <div class="app-tag"><i class="fa-solid fa-oil-well"></i> Oil & Gas Industry</div>
+                            <div class="app-tag"><i class="fa-solid fa-hard-hat"></i> Construction Sites</div>
+                            <div class="app-tag"><i class="fa-solid fa-paint-roller"></i> Paint & Spray Systems</div>
+                            <div class="app-tag"><i class="fa-solid fa-flask"></i> Chemical Plants</div>
+                            <div class="app-tag"><i class="fa-solid fa-ship"></i> Marine & Offshore</div>
+                            <div class="app-tag"><i class="fa-solid fa-warehouse"></i> General Industries</div>
+                        </div>
+                    </div>
+
+                    <!-- Advantages -->
+                    <div class="advantages-section">
+                        <h3 class="text-gold">Advantages</h3>
+                        <ul class="advantages-list">
+                            <li><i class="fa-solid fa-check"></i> Very high discharge pressures</li>
+                            <li><i class="fa-solid fa-check"></i> Excellent for intermittent use</li>
+                            <li><i class="fa-solid fa-check"></i> Proven & reliable technology</li>
+                            <li><i class="fa-solid fa-check"></i> Lower upfront investment</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- ── Highlighted Services Section ── -->
+        <section class="services-highlight">
+            <div class="container">
+                <div class="sh-header">
+                    <span class="badge">What We Offer</span>
+                    <h2>Our <span class="text-gold">Services</span></h2>
+                    <p>Complete lifecycle support — from sales to commissioning and beyond.</p>
+                </div>
+                <div class="services-cards">
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fa-solid fa-store"></i></div>
+                        <h4>Sales & Supply</h4>
+                        <p>New screw & reciprocating compressor supply from leading brands.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                        <h4>Installation & Commissioning</h4>
+                        <p>Professional on-site installation and commissioning by certified engineers.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <h4>Preventive Maintenance</h4>
+                        <p>Scheduled AMC plans to keep your compressor running at peak efficiency.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <h4>Spare Parts Supply</h4>
+                        <p>Genuine OEM and compatible spare parts available for all major makes.</p>
+                    </div>
+                    <div class="svc-card">
+                        <div class="svc-icon"><i class="fa-solid fa-wrench"></i></div>
+                        <h4>Repair & Overhaul</h4>
+                        <p>Expert repair, reconditioning and complete overhaul services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
+                    <div class="footer-tagline">Quality Meets Excellence</div>
+                    <p>Innovative industrial solutions for the modern world.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Silicon City, Indore, MP, India</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@kaskengineering.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 KASK Engineering. All rights reserved.</p>
+                <p>&copy; 2026 KASK Engineering. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -74,6 +440,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        function switchTab(btn, tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+    </script>
 </body>
 
 </html>

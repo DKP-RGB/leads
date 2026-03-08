@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Design Machines | KASK Engineering</title>
+    <title>Custom Built Machines | KASK Engineering</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product-page.css">
+    <style>
+        .product-hero {
+            background-image: linear-gradient(135deg,rgba(0,0,0,.76),rgba(10,10,10,.86)),
+                              url('assets/custom_machines.png');
+        }
+    </style>
 </head>
-
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo1.png" alt="KASK Engineering">
-            </a>
+            <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
+                <a href="products.html" class="nav-link active">Products</a>
                 <a href="index.html#about" class="nav-link">About</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
@@ -29,51 +32,114 @@
         </div>
     </nav>
 
-    <section class="hero" style="height: 60vh;">
-        <div class="hero-content">
-            <h1>Custom Design Machines</h1>
-            <p>Premium industrial solutions for your business.</p>
+    <section class="product-hero">
+        <div class="hero-content" style="opacity:1;transform:none;">
+            <h1>Custom <span class="text-gold">Machines</span></h1>
+            <p>Precision-engineered custom machines and machine parts crafted to your exact technical requirements.</p>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <h2 class="text-gold">Overview</h2>
-            <p>We provide top-tier Custom Design Machines designed for efficiency and durability. Our engineering team
-                ensures that every unit meets global standards.</p>
+    <main>
+        <section style="padding:4rem 0;background:var(--color-dark-grey);">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Home</a><span>/</span>
+                    <a href="products.html">Products</a><span>/</span>
+                    <span style="color:rgba(255,255,255,.7)">Custom Machines</span>
+                </nav>
 
-            <div class="reasons-grid" style="margin-top: 4rem;">
-                <div class="reason-box">
-                    <i class="fa-solid fa-check reason-icon"></i>
-                    <h4>High Performance</h4>
+                <div class="product-detail">
+                    <div class="product-img-wrap">
+                        <img src="assets/custom_machines.png" alt="Custom Built Machines">
+                    </div>
+                    <div class="product-info">
+                        <div class="gold-divider"></div>
+                        <h2>Custom Built Machines & Parts</h2>
+                        <p class="intro">We design, engineer, and fabricate custom-built machines and machine parts tailored to unique industrial requirements. From concept to commissioning, our in-house team delivers precision-engineered solutions that meet your exact specifications and quality standards.</p>
+                        <div class="features-grid">
+                            <div class="feature-item"><i class="fa-solid fa-drafting-compass"></i><span>Bespoke Engineering Design</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-microchip"></i><span>CNC Precision Manufacturing</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><span>Rigorous Quality Control</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-gears"></i><span>Wide Material Selection</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-clock-rotate-left"></i><span>Fast Turnaround Times</span></div>
+                            <div class="feature-item"><i class="fa-solid fa-certificate"></i><span>ISO Quality Standards</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-shield reason-icon"></i>
-                    <h4>Durable</h4>
+
+                <div class="apps-section">
+                    <h3><i class="fa-solid fa-industry" style="margin-right:.75rem;"></i>Applications</h3>
+                    <div class="apps-grid">
+                        <div class="app-tag"><i class="fa-solid fa-cog"></i> Manufacturing Plants</div>
+                        <div class="app-tag"><i class="fa-solid fa-oil-well"></i> Oil & Gas Sector</div>
+                        <div class="app-tag"><i class="fa-solid fa-flask"></i> Chemical Industry</div>
+                        <div class="app-tag"><i class="fa-solid fa-ship"></i> Marine Engineering</div>
+                        <div class="app-tag"><i class="fa-solid fa-hard-hat"></i> Infrastructure Projects</div>
+                        <div class="app-tag"><i class="fa-solid fa-robot"></i> Automation Systems</div>
+                    </div>
                 </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-cog reason-icon"></i>
-                    <h4>Customizable</h4>
-                </div>
-                <div class="reason-box">
-                    <i class="fa-solid fa-leaf reason-icon"></i>
-                    <h4>Eco-Friendly</h4>
+
+                <div class="advantages-section">
+                    <h3 class="text-gold">Advantages</h3>
+                    <ul class="advantages-list">
+                        <li><i class="fa-solid fa-check"></i> Built to your exact specifications</li>
+                        <li><i class="fa-solid fa-check"></i> High-quality materials & finishes</li>
+                        <li><i class="fa-solid fa-check"></i> In-house design & fabrication</li>
+                        <li><i class="fa-solid fa-check"></i> Cost-effective custom solutions</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="services-highlight">
+            <div class="container">
+                <div class="sh-header">
+                    <span class="badge">What We Offer</span>
+                    <h2>Our <span>Services</span></h2>
+                    <p>From concept design to fabrication, installation, and beyond — we cover the full lifecycle.</p>
+                </div>
+                <div class="services-cards">
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-pencil-ruler"></i></div><h4>Design & Engineering</h4><p>CAD/CAM-based design and engineering for custom machinery.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-industry"></i></div><h4>Fabrication & Manufacturing</h4><p>Precision CNC machining, welding, and complete assembly in-house.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div><h4>Installation & Commissioning</h4><p>On-site installation, alignment, and commissioning support.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-wrench"></i></div><h4>After-Sales Support</h4><p>Ongoing maintenance, spare parts, and technical assistance.</p></div>
+                    <div class="svc-card"><div class="svc-icon"><i class="fa-solid fa-headset"></i></div><h4>Technical Consultation</h4><p>Expert advice on machine selection, material choice, and optimization.</p></div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
 
     <footer id="contact" class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 KASK Engineering. All rights reserved.</p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
+                    <div class="footer-tagline">Quality Meets Excellence</div>
+                    <p>Innovative industrial solutions for the modern world.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Silicon City, Indore, MP, India</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@kaskengineering.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
+            <div class="footer-bottom"><p>&copy; 2026 KASK Engineering. All rights reserved.</p></div>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
