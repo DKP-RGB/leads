@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | KASK Engineering</title>
+    <meta name="description" content="Learn about KASK Engineering – trusted industrial engineering solutions provider in Indore, MP, founded by Mr. Jay Kumar Patidar with 25+ years of combined expertise.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product-page.css">
+    <style>
+        /* ── About Hero ── */
+        .about-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,0,0,.85), rgba(10,10,10,.9)),
+                        url('assets/about_facility.png') center/cover no-repeat;
+            padding: 8rem 1.5rem 4rem;
+        }
+        .about-hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 6vw, 4.5rem); color: #fff; line-height:1.1; margin-bottom: 1rem; }
+        .about-hero p { font-size: 1.1rem; color: rgba(255,255,255,.7); max-width: 640px; margin: 0 auto; line-height: 1.8; }
+
+        /* ── Section wrapper ── */
+        .about-section { padding: 5rem 0; }
+        .about-section.alt { background: var(--color-dark-grey, #111); }
+
+        /* ── Story split ── */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .story-img {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .story-img img { width: 100%; height: 420px; object-fit: cover; display:block; }
+        .story-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(212,160,23,.2);
+        }
+        .story-text .subtitle { font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--color-gold, #d4a017); margin-bottom: 1rem; }
+        .story-text h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; margin-bottom: 1.4rem; line-height: 1.2; }
+        .story-text p  { color: rgba(255,255,255,.65); line-height: 1.9; margin-bottom: 1.1rem; font-size: 1rem; }
+        .gold-bar { width: 60px; height: 3px; background: var(--color-gold, #d4a017); border-radius: 2px; margin-bottom: 1.5rem; }
+
+        /* ── Stats row ── */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1.5rem;
+            margin-top: 3.5rem;
+        }
+        .stat-card {
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(212,160,23,.2);
+            border-radius: 1rem;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all .3s ease;
+        }
+        .stat-card:hover { border-color: var(--color-gold,#d4a017); background: rgba(212,160,23,.06); transform: translateY(-4px); }
+        .stat-num { font-family: 'Oswald', sans-serif; font-size: 2.6rem; color: var(--color-gold,#d4a017); font-weight: 700; }
+        .stat-label { font-size: .85rem; color: rgba(255,255,255,.6); margin-top: .4rem; }
+
+        /* ── Founder card ── */
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .founder-photo {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid rgba(212,160,23,.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,.5);
+        }
+        .founder-photo img { width: 100%; height: 460px; object-fit: cover; object-position: top; display:block; }
+        .founder-info .subtitle { font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--color-gold, #d4a017); margin-bottom:.8rem; }
+        .founder-info h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem,4vw,3rem); color: #fff; margin-bottom: .3rem; line-height:1.15; }
+        .founder-title { color: var(--color-gold,#d4a017); font-size: .95rem; margin-bottom: 1.6rem; font-weight: 500; }
+        .founder-info p { color: rgba(255,255,255,.65); line-height: 1.9; margin-bottom: 1rem; font-size: 1rem; }
+        .founder-badges { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.8rem; }
+        .f-badge { display: flex; align-items: center; gap: .5rem; background: rgba(212,160,23,.1); border: 1px solid rgba(212,160,23,.3); border-radius: 2rem; padding: .5rem 1rem; font-size: .82rem; color: rgba(255,255,255,.8); }
+        .f-badge i { color: var(--color-gold,#d4a017); font-size: .9rem; }
+
+        /* ── Values grid ── */
+        .values-header { text-align: center; margin-bottom: 3.5rem; }
+        .values-header .subtitle { font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--color-gold, #d4a017); margin-bottom: .8rem; }
+        .values-header h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); color: #fff; }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .value-card {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 1.2rem;
+            padding: 2rem 1.6rem;
+            transition: all .3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .value-card::before { content:''; position:absolute; inset:0; background: linear-gradient(135deg, rgba(212,160,23,.05) 0%, transparent 60%); opacity:0; transition:.3s; }
+        .value-card:hover { border-color: rgba(212,160,23,.4); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,.3); }
+        .value-card:hover::before { opacity:1; }
+        .val-icon { width: 52px; height: 52px; background: rgba(212,160,23,.12); border: 1px solid rgba(212,160,23,.3); border-radius: 1rem; display: flex; align-items:center; justify-content:center; font-size: 1.4rem; color: var(--color-gold,#d4a017); margin-bottom: 1.2rem; transition:.3s; }
+        .value-card:hover .val-icon { background: var(--color-gold,#d4a017); color: #000; }
+        .value-card h4 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: #fff; margin-bottom: .6rem; letter-spacing: .04em; }
+        .value-card p  { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.7; }
+
+        /* ── Team photo strip ── */
+        .team-strip { border-radius: 1.5rem; overflow: hidden; position: relative; height: 380px; }
+        .team-strip img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+        .team-strip-overlay {
+            position: absolute; inset:0;
+            background: linear-gradient(to right, rgba(0,0,0,.7) 0%, transparent 60%);
+            display: flex; align-items: center; padding: 3rem;
+        }
+        .team-strip-overlay div h3 { font-family:'Oswald',sans-serif; font-size:2rem; color:#fff; margin-bottom:.5rem; }
+        .team-strip-overlay div p  { color:rgba(255,255,255,.7); max-width:380px; font-size:.95rem; line-height:1.7; }
+
+        /* ── Responsive ── */
+        @media(max-width:900px){
+            .story-grid, .founder-grid { grid-template-columns:1fr; }
+            .founder-grid { gap:2.5rem; }
+            .stats-row { grid-template-columns: repeat(2,1fr); }
+            .story-img img { height:280px; }
+            .founder-photo img { height:340px; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(max-width:540px){
+            .stats-row { grid-template-columns:1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <a href="#contact" class="btn-premium">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div>
+            <p style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--color-gold,#d4a017);margin-bottom:.8rem;font-weight:700;">KASK Engineering</p>
+            <h1>About <span class="text-gold">Our Company</span></h1>
+            <p>Trusted industrial engineering solutions from the heart of Central India — Indore, Madhya Pradesh.</p>
+        </div>
+    </section>
+
+    <main>
+
+        <!-- ── Our Story ── -->
+        <section class="about-section">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-img">
+                        <img src="assets/about_facility.png" alt="KASK Engineering Facility">
+                    </div>
+                    <div class="story-text">
+                        <p class="subtitle">Who We Are</p>
+                        <div class="gold-bar"></div>
+                        <h2>A Trusted Name in Industrial <span class="text-gold">Engineering</span></h2>
+                        <p>We are a trusted provider of industrial engineering solutions based in <strong style="color:#fff;">Indore, Madhya Pradesh</strong>. Our company specialises in supplying and servicing equipment such as Screw Compressors, Gas Boosters, HVAC Systems, Heat Exchangers and Custom Built Machines & Parts.</p>
+                        <p>With a team having more than <strong style="color:#fff;">25 years of combined industry experience</strong>, we deliver high-quality products along with professional installation, maintenance, and technical support.</p>
+                        <p>Our focus is on providing energy-efficient, durable, and cost-effective solutions that help industries improve productivity and maintain smooth operations.</p>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-row">
+                    <div class="stat-card"><div class="stat-num">25+</div><div class="stat-label">Years Combined Experience</div></div>
+                    <div class="stat-card"><div class="stat-num">500+</div><div class="stat-label">Projects Completed</div></div>
+                    <div class="stat-card"><div class="stat-num">6</div><div class="stat-label">Product Categories</div></div>
+                    <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Client Satisfaction Focus</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Founder ── -->
+        <section class="about-section alt">
+            <div class="container">
+                <div class="founder-grid">
+                    <div class="founder-photo">
+                        <img src="assets/about_founder.png" alt="Mr. Jay Kumar Patidar – Founder, KASK Engineering">
+                    </div>
+                    <div class="founder-info">
+                        <p class="subtitle">Leadership</p>
+                        <h2>Mr. Jay Kumar <span class="text-gold">Patidar</span></h2>
+                        <div class="founder-title"><i class="fa-solid fa-user-tie" style="margin-right:.5rem;"></i>Founder & Managing Director, KASK Engineering</div>
+                        <div class="gold-bar"></div>
+                        <p>KASK Engineering was founded by <strong style="color:#fff;">Mr. Jay Kumar Patidar</strong>, with a clear vision to provide reliable and efficient engineering solutions to modern industries across India.</p>
+                        <p>Under his leadership, the company has grown into a respected name in the industrial engineering sector, known for its commitment to quality, timely service, and long-term client relationships.</p>
+                        <p>His hands-on experience and deep understanding of industrial requirements continue to drive the company's mission of delivering engineering excellence that industries can depend on.</p>
+                        <div class="founder-badges">
+                            <div class="f-badge"><i class="fa-solid fa-medal"></i> Industrial Engineering Expert</div>
+                            <div class="f-badge"><i class="fa-solid fa-map-marker-alt"></i> Based in Indore, MP</div>
+                            <div class="f-badge"><i class="fa-solid fa-handshake"></i> Long-Term Relationship Builder</div>
+                            <div class="f-badge"><i class="fa-solid fa-lightbulb"></i> Visionary Leader</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Our Team ── -->
+        <section class="about-section">
+            <div class="container">
+                <div class="team-strip">
+                    <img src="assets/about_team.png" alt="KASK Engineering Team">
+                    <div class="team-strip-overlay">
+                        <div>
+                            <h3>Our <span class="text-gold">Expert Team</span></h3>
+                            <p>Backed by over 25 years of combined industry experience, our skilled engineers and technicians are dedicated to delivering reliable solutions and responsive support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Core Values ── -->
+        <section class="about-section alt">
+            <div class="container">
+                <div class="values-header">
+                    <p class="subtitle">What Drives Us</p>
+                    <h2>Our Core <span class="text-gold">Values</span></h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="val-icon"><i class="fa-solid fa-leaf"></i></div>
+                        <h4>Energy Efficiency</h4>
+                        <p>We prioritise solutions that reduce energy consumption and operating costs for our clients.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="val-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h4>Reliability & Durability</h4>
+                        <p>Every product and service is built to last, backed by rigorous quality standards.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="val-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h4>Long-Term Relationships</h4>
+                        <p>We are committed to building lasting partnerships through trust, transparency, and consistent delivery.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="val-icon"><i class="fa-solid fa-headset"></i></div>
+                        <h4>Timely Support</h4>
+                        <p>Fast technical support and maintenance ensure our clients' operations never miss a beat.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="val-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                        <h4>Cost Effectiveness</h4>
+                        <p>High-quality industrial solutions at competitive prices — maximising value for every investment.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="val-icon"><i class="fa-solid fa-microscope"></i></div>
+                        <h4>Technical Expertise</h4>
+                        <p>Our engineers bring decades of hands-on experience across multiple industrial sectors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── What We Offer (Quick links) ── -->
+        <section class="about-section">
+            <div class="container">
+                <div class="values-header">
+                    <p class="subtitle">Our Products & Services</p>
+                    <h2>What We <span class="text-gold">Specialise In</span></h2>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+                    <a href="air-compressors.html" style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.4rem 1.2rem;text-decoration:none;transition:all .3s ease;color:#fff;" onmouseover="this.style.borderColor='var(--color-gold)';this.style.background='rgba(212,160,23,.06)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)'">
+                        <i class="fa-solid fa-wind" style="font-size:1.4rem;color:var(--color-gold,#d4a017);min-width:24px;"></i>
+                        <span style="font-weight:500;font-size:.95rem;">Screw &amp; Reciprocating Compressors</span>
+                    </a>
+                    <a href="gas-booster.html" style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.4rem 1.2rem;text-decoration:none;transition:all .3s ease;color:#fff;" onmouseover="this.style.borderColor='var(--color-gold)';this.style.background='rgba(212,160,23,.06)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)'">
+                        <i class="fa-solid fa-gauge-high" style="font-size:1.4rem;color:var(--color-gold,#d4a017);min-width:24px;"></i>
+                        <span style="font-weight:500;font-size:.95rem;">Gas Boosters</span>
+                    </a>
+                    <a href="hvac-system.html" style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.4rem 1.2rem;text-decoration:none;transition:all .3s ease;color:#fff;" onmouseover="this.style.borderColor='var(--color-gold)';this.style.background='rgba(212,160,23,.06)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)'">
+                        <i class="fa-solid fa-fan" style="font-size:1.4rem;color:var(--color-gold,#d4a017);min-width:24px;"></i>
+                        <span style="font-weight:500;font-size:.95rem;">HVAC Systems</span>
+                    </a>
+                    <a href="heat-exchanger.html" style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.4rem 1.2rem;text-decoration:none;transition:all .3s ease;color:#fff;" onmouseover="this.style.borderColor='var(--color-gold)';this.style.background='rgba(212,160,23,.06)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)'">
+                        <i class="fa-solid fa-temperature-arrow-down" style="font-size:1.4rem;color:var(--color-gold,#d4a017);min-width:24px;"></i>
+                        <span style="font-weight:500;font-size:.95rem;">Heat Exchangers</span>
+                    </a>
+                    <a href="custom-machines.html" style="display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.4rem 1.2rem;text-decoration:none;transition:all .3s ease;color:#fff;" onmouseover="this.style.borderColor='var(--color-gold)';this.style.background='rgba(212,160,23,.06)'" onmouseout="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.04)'">
+                        <i class="fa-solid fa-gears" style="font-size:1.4rem;color:var(--color-gold,#d4a017);min-width:24px;"></i>
+                        <span style="font-weight:500;font-size:.95rem;">Custom Built Machines &amp; Parts</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
+                    <div class="footer-tagline">Quality Meets Excellence</div>
+                    <p>Innovative industrial solutions for the modern world.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Silicon City, Indore, MP, India</p>
+                    <p><i class="fa-solid fa-phone"></i> +91 123 456 7890</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@kaskengineering.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 KASK Engineering. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
