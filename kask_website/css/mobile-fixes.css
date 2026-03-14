@@ -104,6 +104,41 @@
     .footer-link {
         justify-content: center !important;
     }
+
+    /* 7. Testimonial Fixes (Jay Mathe/Sarah Miller) */
+    .unified-stack {
+        height: 500px !important; /* Increase height for mobile content */
+    }
+
+    .u-testimonial-card {
+        padding: 2rem 1.5rem !important; /* Reduce padding to fit names/logos */
+        justify-content: flex-start !important;
+        gap: 1.5rem;
+    }
+
+    .u-quote {
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .u-author {
+        padding-top: 1rem !important;
+        gap: 0.8rem !important;
+        flex-wrap: wrap; /* Ensure name stacks if still too long */
+    }
+
+    .u-avatar {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .u-info h4 {
+        font-size: 1rem !important;
+    }
+
+    .u-info span {
+        font-size: 0.8rem !important;
+    }
 }
 
 /* Extra small devices fix */
