@@ -172,7 +172,7 @@ img {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/hero_background_industrial.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero_bg.png') center/cover no-repeat;
     background-color: #111;
     /* Fallback */
     display: flex;
@@ -696,7 +696,7 @@ img {
 
 /* Brands Section */
 .brands-section {
-    padding: 6rem 0;
+    padding: 6rem 0 1rem;
     background: var(--color-dark-grey);
     overflow: hidden;
     position: relative;
@@ -784,7 +784,7 @@ img {
 
 /* Footer */
 .footer {
-    padding: 3rem 0 2rem;
+    padding: 1.5rem 0;
     background: var(--color-dark-grey);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1092,5 +1092,26 @@ body.light-mode .modern-service-card {
     .footer-brand {
         margin: 0 auto;
     }
+}
+
+
+/* --- Clickable Footer Links --- */
+.footer-link {
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.footer-link:hover {
+    color: var(--color-gold) !important;
+    transform: translateX(5px);
+}
+
+.footer-link i {
+    color: var(--color-gold);
 }
 

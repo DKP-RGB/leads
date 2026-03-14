@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fade Up Sections
     const fadeElements = document.querySelectorAll('.section-header, .about-content, .footer-top');
     fadeElements.forEach(el => {
+        // Skip header animation on products page
+        if (window.location.pathname.includes('products.html') && el.classList.contains('section-header')) return;
+
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
@@ -41,22 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Staggered Animations for Grids
-    // Services
-    gsap.from('.modern-service-card', {
-        scrollTrigger: {
-            trigger: '.services-grid',
-            start: 'top 80%'
-        },
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'power2.out',
-        onComplete: function () {
-            gsap.set(this.targets(), { clearProps: "transform,opacity" });
-        }
-    });
+    // Staggered Animations for Grids (Home Page Only)
+    if (document.querySelector('.services-grid')) {
+        gsap.from('.services-grid .modern-service-card', {
+            scrollTrigger: {
+                trigger: '.services-grid',
+                start: 'top 80%'
+            },
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: 'power2.out',
+            onComplete: function () {
+                gsap.set(this.targets(), { clearProps: "transform,opacity" });
+            }
+        });
+    }
 
     // Reasons
     gsap.from('.reason-box', {
@@ -225,4 +229,3 @@ if (mobileMenu && navLinks) {
         });
     });
 }
-
