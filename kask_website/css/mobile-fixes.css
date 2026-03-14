@@ -1,0 +1,118 @@
+/* 
+   KASK Engineering - Isolated Mobile Fixes
+   This file contains styles that target ONLY mobile and tablet views.
+   Linked after main styles to ensure isolated fixes.
+*/
+
+@media (max-width: 900px) {
+    /* 1. Hamburger Menu Fixes */
+    .nav-links {
+        display: flex !important; /* Override the 'display: none' in main styles */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: #0f0f0f !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 5rem 2rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 2000 !important;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+        border-left: 1px solid rgba(212, 160, 23, 0.2);
+    }
+
+    .nav-links.active {
+        right: 0 !important;
+        transform: translateX(0);
+    }
+
+    .nav-link {
+        font-size: 1.2rem !important;
+        width: 100%;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .menu-toggle {
+        display: block !important;
+        z-index: 2001 !important;
+        background: rgba(212, 160, 23, 0.1);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(212, 160, 23, 0.3);
+    }
+
+    /* 2. Hero Section Typography */
+    .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 3.2rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero-content p {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* 3. Global Overflow & Scrolling Fixes */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        position: relative;
+    }
+
+    .container {
+        padding: 0 1.5rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Section Spacing Refinement */
+    section {
+        padding: 4rem 0 !important;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem !important;
+    }
+
+    /* 5. Grid Adjustments for smaller screens */
+    .services-grid, 
+    .products-grid,
+    .reasons-grid, 
+    .industries-grid,
+    .unified-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    /* 6. Footer Stacking */
+    .footer-top {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 3rem !important;
+    }
+
+    .footer-brand, .footer-contact {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .footer-link {
+        justify-content: center !important;
+    }
+}
+
+/* Extra small devices fix */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.2rem !important;
+    }
+    
+    .modern-service-card {
+        padding: 1.5rem !important;
+    }
+}
