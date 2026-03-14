@@ -107,13 +107,15 @@
 
     /* 7. Testimonial Fixes (Jay Mathe/Sarah Miller) */
     .unified-stack {
-        height: 500px !important; /* Increase height for mobile content */
+        height: 420px !important; /* Reduced height to fit content better */
     }
 
     .u-testimonial-card {
-        padding: 2rem 1.5rem !important; /* Reduce padding to fit names/logos */
+        padding: 2rem 1.25rem !important; 
+        width: 92% !important; /* Narrower to look less "wide" */
+        left: 4% !important; /* Center the narrower card */
         justify-content: flex-start !important;
-        gap: 1.5rem;
+        gap: 1.2rem;
     }
 
     .u-quote {
