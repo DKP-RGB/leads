@@ -31,7 +31,7 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="assets/logo1.png" alt="KASK Engineering"></a>
-            <div class="nav-links">
+            <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div> <div class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="products.html" class="nav-link active">Products</a>
                 <a href="about.html" class="nav-link">About</a>
@@ -115,7 +115,46 @@
 
     </main>
 
-    <footer id="contact" class="footer">
+    
+    <!-- Hover Footer CSS -->
+    <link rel="stylesheet" href="css/hover-footer.css">
+    
+    <!-- Text hover effect -->
+    <div class="hover-footer-container">
+        <svg
+            class="hover-footer-svg"
+            viewBox="0 0 300 100"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <defs>
+                <linearGradient id="textGradient" gradientUnits="userSpaceOnUse" cx="50%" cy="50%" r="25%">
+                    <stop offset="0%" stop-color="transparent" />
+                    <stop offset="25%" stop-color="transparent" />
+                    <stop offset="50%" stop-color="transparent" />
+                    <stop offset="75%" stop-color="transparent" />
+                    <stop offset="100%" stop-color="transparent" />
+                </linearGradient>
+
+                <radialGradient id="revealMask" gradientUnits="userSpaceOnUse" r="20%" cx="50%" cy="50%">
+                    <stop offset="0%" stop-color="white" />
+                    <stop offset="100%" stop-color="black" />
+                </radialGradient>
+                <mask id="textMask">
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#revealMask)" />
+                </mask>
+            </defs>
+            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="hover-footer-text-outline">
+                KASK
+            </text>
+            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="hover-footer-text-animated">
+                KASK
+            </text>
+            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="hover-footer-text-gradient">
+                KASK
+            </text>
+        </svg>
+    </div>
+<footer id="contact" class="footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -136,7 +175,11 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=3"></script>
 </body>
 </html>
+
+
+
+
 

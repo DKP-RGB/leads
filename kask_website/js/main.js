@@ -194,3 +194,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 })();
+
+// Mobile Menu Toggle
+const mobileMenu = document.getElementById("mobile-menu");
+const navLinks = document.querySelector(".nav-links");
+
+if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        
+        // Optional: Change icon (bars to xmark)
+        const icon = mobileMenu.querySelector("i");
+        if (navLinks.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
+    });
+
+    // Close menu when a link is clicked
+    const links = navLinks.querySelectorAll("a");
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            const icon = mobileMenu.querySelector("i");
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        });
+    });
+}
+
