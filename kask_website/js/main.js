@@ -23,6 +23,24 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 1.2,
         ease: 'power3.out',
         delay: 0.5
+    })
+    .to('.hero-visual', {
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: 'power3.out'
+    }, "-=0.8");
+
+    // Parallax effect for hero background
+    gsap.to('.hero', {
+        backgroundPositionY: '20%',
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+        }
     });
 
     // Fade Up Sections
